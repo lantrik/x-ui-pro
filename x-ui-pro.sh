@@ -196,6 +196,7 @@ fi
 #################################Nginx Config###########################################################
 mkdir -p /etc/nginx/stream-enabled
 cat > "/etc/nginx/stream-enabled/stream.conf" << EOF
+map_hash_bucket_size 64;
 map \$ssl_preread_server_name \$sni_name {
     hostnames;
     ${reality_domain}      xray;
